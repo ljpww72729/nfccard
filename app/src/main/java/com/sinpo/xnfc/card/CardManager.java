@@ -15,11 +15,6 @@ Additional permission under GNU GPL version 3 section 7 */
 
 package com.sinpo.xnfc.card;
 
-import skyseraph.android.util.LogUtil;
-import skyseraph.android.util.MyConstant;
-
-import com.sinpo.xnfc.card.pboc.PbocCard;
-
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.nfc.NfcAdapter;
@@ -29,10 +24,15 @@ import android.nfc.tech.NfcF;
 import android.nfc.tech.NfcV;
 import android.os.Parcelable;
 
+import com.sinpo.xnfc.card.pboc.PbocCard;
+
+import skyseraph.android.util.LogUtil;
+import skyseraph.android.util.MyConstant;
+
 public final class CardManager
 {
 	private static final String TAG_ASSIST = "[CardManager]-";
-	private static final String SP = "<br/><img src=\"spliter\"/><br/>"; //²åÈëÍ¼Æ¬ <img src="Í¼ĞÎÎÄ¼şÃû">
+	private static final String SP = "<br/><img src=\"spliter\"/><br/>";//æ’å…¥å›¾ç‰‡ <img src="å›¾å½¢æ–‡ä»¶å">
 
 	public static String[][] TECHLISTS;
 	public static IntentFilter[] FILTERS;
@@ -61,7 +61,7 @@ public final class CardManager
 
 		final StringBuilder s = new StringBuilder();
 
-		s.append("<br/><b>").append(n).append("</b>"); //n ´ÖÌå
+		s.append("<br/><b>").append(n).append("</b>"); //n ç²—ä½“
 
 		if (i != null)
 			s.append(SP).append(i);

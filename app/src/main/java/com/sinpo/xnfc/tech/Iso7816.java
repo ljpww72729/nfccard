@@ -15,13 +15,13 @@ Additional permission under GNU GPL version 3 section 7 */
 
 package com.sinpo.xnfc.tech;
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import android.nfc.tech.IsoDep;
 
 import com.sinpo.xnfc.Util;
+
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Iso7816
 {
@@ -510,7 +510,7 @@ public class Iso7816
 		public Response selectByName(byte... name)
 		{
 			ByteBuffer buff = ByteBuffer.allocate(name.length + 6);
-			// ÃüÁî±êÍ·
+			// å‘½ä»¤æ ‡å¤´
 			buff.put((byte) 0x00) // CLA Class
 					.put((byte) 0xA4) // INS Instruction
 					.put((byte) 0x04) // P1 Parameter 1

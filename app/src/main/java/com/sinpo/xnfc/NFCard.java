@@ -15,13 +15,6 @@ Additional permission under GNU GPL version 3 section 7 */
 
 package com.sinpo.xnfc;
 
-import java.util.Arrays;
-
-import org.xml.sax.XMLReader;
-
-import skyseraph.android.util.LogUtil;
-import skyseraph.android.util.MyConstant;
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -49,6 +42,13 @@ import android.widget.Toast;
 
 import com.sinpo.xnfc.card.CardManager;
 
+import org.xml.sax.XMLReader;
+
+import java.util.Arrays;
+
+import skyseraph.android.util.LogUtil;
+import skyseraph.android.util.MyConstant;
+
 public final class NFCard extends Activity implements OnClickListener, Html.ImageGetter, Html.TagHandler
 {
 	private static final String TAG_ASSIST = "[NFCard]-";
@@ -73,15 +73,15 @@ public final class NFCard extends Activity implements OnClickListener, Html.Imag
 		final Resources res = getResources();
 		this.res = res;
 
-		final View decor = getWindow().getDecorView();// ���
+		final View decor = getWindow().getDecorView();// 最顶层
 		final TextView board = (TextView) decor.findViewById(R.id.board);
-		this.board = board; // zhaob: һ�ֱ��˼ά
+		this.board = board; // zhaob: 一种编程思维
 
 		decor.findViewById(R.id.btnCopy).setOnClickListener(this);
 		decor.findViewById(R.id.btnNfc).setOnClickListener(this);
 		decor.findViewById(R.id.btnExit).setOnClickListener(this);
 
-		board.setMovementMethod(LinkMovementMethod.getInstance());// ����Ч��
+		board.setMovementMethod(LinkMovementMethod.getInstance());// 滚动效果
 		board.setFocusable(false);
 		board.setClickable(false);
 		board.setLongClickable(false);
@@ -276,7 +276,7 @@ public final class NFCard extends Activity implements OnClickListener, Html.Imag
 	
 	private void showData(String data)
 	{
-		LogUtil.d(MyConstant.TAG, TAG_ASSIST+"showData��data="+data);
+		LogUtil.d(MyConstant.TAG, TAG_ASSIST+"showData，data="+data);
 		if (data == null || data.length() == 0)
 		{
 			showHint();
